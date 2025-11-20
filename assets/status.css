@@ -1,0 +1,214 @@
+body {
+  font-family: sans-serif;
+  background: #fdf6e4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.order-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.order-item {
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(50% - 15px);
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.quantity {
+  display: block;
+  font-size: 0.8em;     /* lebih kecil dari ukuran normal */
+  color: #000;
+  font-weight: normal;
+  opacity: 0.5;        /* lebih transparan */
+  margin-top: 4px;
+}
+
+.order-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.order-details span {
+  font-weight: bold;
+  display: block;
+}
+
+.status-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.status-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.status-inprogress {
+  background: #f2c300;
+  color: #000;
+}
+
+.status-done {
+  background: #3ddc84;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #28a745;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 9999;
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup h4 {
+  margin: 0 0 10px;
+  color: #28a745;
+}
+
+.popup button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Input */
+input[readonly] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+/* Logout button */
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #a0823c;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 999;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #8b6f30;
+}
+
+/* Sidebar */
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #a0823c;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  padding: 30px 0;
+  align-items: center;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+  color: #f0e3c3;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sidebar a {
+    transform: rotate(0);
+    font-size: 13px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .order-item {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+}

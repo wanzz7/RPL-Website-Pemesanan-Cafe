@@ -1,0 +1,71 @@
+body {
+      font-family: sans-serif;
+      background-color: #fef9ec;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .dashboard {
+      width: 90%;
+      max-width: 800px;
+      background-color: #fff9e6;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f3f3f3;
+    }
+
+    .update-btn {
+      padding: 5px 10px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .status-diproses { color: orange; }
+    .status-siap { color: green; }
+    .status-selesai { color: gray; }
+
+    .logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #a0823c;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    z-index: 999;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background-color: #8b6f30;
+  }

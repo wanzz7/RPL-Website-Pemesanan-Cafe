@@ -1,0 +1,238 @@
+/* Reset & font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #fdf4e7;
+  height: 100vh;
+}
+
+/* Wrapper utama: sidebar + konten */
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 80px;
+  background-color: #a0823c;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  padding: 30px 0;
+  align-items: center;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover {
+    color: #f0e3c3;
+  }
+
+/* Konten utama */
+.container {
+  max-width: 900px;
+  flex: 1;
+  background-color: #fff6dc;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 30px auto;
+  overflow-y: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #5b4a1c;
+}
+
+/* Daftar pesanan */
+.order-list {
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.order-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-details span {
+  font-weight: bold;
+}
+
+.order-details small {
+  color: #555;
+}
+
+/* Opsi pembayaran */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-options label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #b8984b;
+  color: #000;
+  position: relative;
+}
+
+input[type="radio"]:checked + label::after {
+  content: "✔";
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+}
+
+/* Ringkasan total */
+.summary {
+  background-color: #d5ba74;
+  border-top-left-radius: 100% 60px;
+  border-top-right-radius: 100% 60px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Tombol konfirmasi */
+button[type="submit"] {
+  width: 100%;
+  background-color: #b8984b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #a7893e;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  margin-left: auto;  /* <- INI penting, dia mendorong .item-quantity ke sebelah kanan */
+  gap: 10px;
+}
+
+
+.item-quantity button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  padding: 0;
+  border: none;
+  background: #b49047;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+
+/* Responsif */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sidebar a {
+    transform: rotate(0);
+    font-size: 13px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary {
+    border-radius: 20px;
+  }
+}
